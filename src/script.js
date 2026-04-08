@@ -2,6 +2,7 @@ function displayInfo() {
   ///Sydney
 
   let sydneyElement = document.querySelector("#sydney");
+
   let sydneyTime = sydneyElement.querySelector(".time");
   let sydneyDateElement = sydneyElement.querySelector(".date");
   let sydneyDate = moment().tz("Australia/Sydney");
@@ -11,6 +12,7 @@ function displayInfo() {
 
   ///Detroit
   let detroitElement = document.querySelector("#detroit");
+
   let detroitTime = detroitElement.querySelector(".time");
   let detroitDateElement = detroitElement.querySelector(".date");
   let detroitDate = moment().tz("America/Detroit");
@@ -23,6 +25,9 @@ setInterval(displayInfo, 1000);
 
 function updateCity(event) {
   let cityTz = event.target.value;
+  if (cityTz === "current") {
+    cityTz = moment.tz.guess();
+  }
   let cityElement = document.querySelector("#cities");
   let cityTime = moment().tz(cityTz).format("h:mm:ss [<small>]A[</small>]");
   let cityDate = moment().tz(cityTz).format("MMMM Do, YYYY");

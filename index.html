@@ -11,28 +11,40 @@
   <body>
     <h1>World Clock</h1>
     <div class="container">
-    <select name="location" id="location" class="location">
+      <select name="location" id="location" class="location">
         <option value="city">Choose a city</option>
-        <option value="sydney">Sydney</option>
-        <option value="detroit">Detroit</option>
-        <option value="tokyo">Tokyo</option>
-    </select>
-    <hr>
-    <div class="time-clock" id="sydney">
-        <div class="city-info">
-    <div class="city">Sydney🏜️ <div class="date"></div></div>
-    <div class="time"> 
-   </div></div></div>
-    
-    <div class="time-clock" id="detroit">
-        <div class="city-info">
-    <div class="city">Detroit 🏙️<div class="date"></div></div>
-    <div class="time">
-   </div></div>
-    
+        <option value="Australia/Sydney">Sydney</option>
+        <option value="America/Detroit">Detroit</option>
+        <option value="Asia/Tokyo">Tokyo</option>
+        <option value="Asia/Seoul">Seoul</option>
+        <option value="Africa/Accra">Accra</option>
+        <option value="Canada/Newfoundland">Newfoundland</option>
+        <option value="Europe/Paris">Paris</option>
+        <option value="US/Hawaii">Hawaii</option>
+      </select>
+      <hr />
+      <div id="cities">
+        <div class="time-clock" id="sydney">
+          <div class="city-info">
+            <div class="city">
+              Sydney🏜️
+              <div class="date"></div>
+            </div>
+            <div class="time"></div>
+          </div>
+        </div>
+
+        <div class="time-clock" id="detroit">
+          <div class="city-info">
+            <div class="city">
+              Detroit 🏙️
+              <div class="date"></div>
+            </div>
+            <div class="time"></div>
+          </div>
+        </div>
+      </div>
     </div>
- 
-    </div></div>
     <footer>
       Code built by
       <a href="https://github.com/Vlove21" target="_blank"> Vonnie Love</a>,

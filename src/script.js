@@ -20,3 +20,19 @@ function displayInfo() {
 }
 displayInfo();
 setInterval(displayInfo, 1000);
+
+function updateCity(event) {
+  let cityTz = event.target.value;
+  let cityElement = document.querySelector("#cities");
+  let cityTime = moment().tz(cityTz).format("h:mm:ss [<small>]A[</small>]");
+  let cityDate = moment().tz(cityTz).format("MMMM Do, YYYY");
+  let cityName = cityTz.replace("_", " ").split("/")[1];
+  cityElement.innerHTML = `<div class="time-clock" >
+        <div class="city-info">
+    <div class="city"> ${cityName}<div class="date">${cityDate}</div></div>
+    <div class="time" id="time"> ${cityTime}
+   </div></div></div>`;
+}
+
+let timeSelectElement = document.querySelector("#location");
+timeSelectElement.addEventListener("change", updateCity);

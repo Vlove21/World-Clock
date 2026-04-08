@@ -27,13 +27,14 @@ select {
 }
 .time-clock {
   padding-top: 20px;
+  border-bottom: dashed grey 1px;
 }
 .city-info {
   display: flex;
   justify-content: space-between;
-  border-bottom: dashed grey 1px;
+  
 }
-.city-info:last-child {
+.time-clock:last-child {
   border-bottom: none;
 }
 .city {
@@ -57,7 +58,7 @@ select {
   text-align: left;
 }
 
-.am-pm {
+small {
   font-size: 20px;
 }
 

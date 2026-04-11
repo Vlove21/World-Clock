@@ -1,30 +1,31 @@
 function displayInfo() {
   ///Sydney
-
   let sydneyElement = document.querySelector("#sydney");
-  let sydneyTime = sydneyElement.querySelector(".time");
-  let sydneyDateElement = sydneyElement.querySelector(".date");
-  let sydneyDate = moment().tz("Australia/Sydney");
+  if (sydneyElement) {
+    let sydneyTime = sydneyElement.querySelector(".time");
+    let sydneyDateElement = sydneyElement.querySelector(".date");
+    let sydneyDate = moment().tz("Australia/Sydney");
 
-  sydneyDateElement.innerHTML = sydneyDate.format("MMMM Do, YYYY");
-  sydneyTime.innerHTML = sydneyDate.format("h:mm:ss [<small>]A[</small>]");
-
+    sydneyDateElement.innerHTML = sydneyDate.format("MMMM Do, YYYY");
+    sydneyTime.innerHTML = sydneyDate.format("h:mm:ss [<small>]A[</small>]");
+  }
   ///Detroit
+
   let detroitElement = document.querySelector("#detroit");
+  if (detroitElement) {
+    let detroitTime = detroitElement.querySelector(".time");
+    let detroitDateElement = detroitElement.querySelector(".date");
+    let detroitDate = moment().tz("America/Detroit");
 
-  let detroitTime = detroitElement.querySelector(".time");
-  let detroitDateElement = detroitElement.querySelector(".date");
-  let detroitDate = moment().tz("America/Detroit");
-
-  detroitDateElement.innerHTML = detroitDate.format("MMMM Do, YYYY");
-  detroitTime.innerHTML = detroitDate.format("h:mm:ss [<small>]A[</small>]");
+    detroitDateElement.innerHTML = detroitDate.format("MMMM Do, YYYY");
+    detroitTime.innerHTML = detroitDate.format("h:mm:ss [<small>]A[</small>]");
+  }
 }
 displayInfo();
 setInterval(displayInfo, 1000);
 
 function updateCity(event) {
-  let cityTz = null;
-  cityTz = event.target.value;
+  let cityTz = event.target.value;
   console.log(cityTz);
   if (cityTz === "current") {
     cityTz = moment.tz.guess();
@@ -44,26 +45,8 @@ function updateCity(event) {
     <div class="time" id="time"> ${cityTime}
    </div></div></div> 
     <a href="/">All cities</a>`;
-
-    if (
-      cityElement ===
-      `<div class="time-clock" >
-        <div class="city-info">
-    <div class="city"> ${cityName}<div class="date">${cityDate}</div></div>
-    <div class="time" id="time"> ${cityTime}
-   </div></div></div> 
-    <a href="/">All cities</a>`
-    ) {
-      setTimeout();
-    }
-    console.log(cityTz);
   }
-  //let selectChange = document.querySelector("#location")
-  //selectChange.addEventListener("change", )
-  //clearInterval();
 
-  //updateTime();
-  //timeSelect.addEventListener("change", clearInterval(updateTime));
   let intervalidId = null;
 
   function startInterval() {
@@ -76,4 +59,4 @@ function updateCity(event) {
 }
 
 let timeSelectElement = document.querySelector("#location");
-timeSelectElement.addEventListener("change", updateCity);
+timeSelectElement.addEventListener("change", updateCity, { once: true });

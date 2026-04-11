@@ -26,7 +26,6 @@ setInterval(displayInfo, 1000);
 
 function updateCity(event) {
   let cityTz = event.target.value;
-  console.log(cityTz);
   if (cityTz === "current") {
     cityTz = moment.tz.guess();
   }

@@ -2,7 +2,11 @@ body {
   background-color: rgb(211, 231, 224);
   font-family: sans-serif;
 }
-
+h1 {
+  font-size: 45px;
+  font-weight: 700;
+  text-decoration: underline rgb(245, 248, 250);
+}
 h1,
 footer {
   text-align: center;
@@ -32,7 +36,6 @@ select {
 .city-info {
   display: flex;
   justify-content: space-between;
-  
 }
 .time-clock:last-child {
   border-bottom: none;

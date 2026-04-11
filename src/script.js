@@ -1,4 +1,15 @@
 function displayInfo() {
+  // tokyo
+  let tokyoElement = document.querySelector("#tokyo");
+  if (tokyoElement) {
+    let tokyoTime = tokyoElement.querySelector(".time");
+    let tokyoDateElement = tokyoElement.querySelector(".date");
+    let tokyoDate = moment().tz("Asia/Tokyo");
+
+    tokyoDateElement.innerHTML = tokyoDate.format("MMMM Do, YYYY");
+    tokyoTime.innerHTML = tokyoDate.format("h:mm:ss [<small>]A[</small>]");
+  }
+
   ///Sydney
   let sydneyElement = document.querySelector("#sydney");
   if (sydneyElement) {

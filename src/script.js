@@ -54,7 +54,7 @@ function updateCity(event) {
     <div class="city"> ${cityName}<div class="date">${cityDate}</div></div>
     <div class="time" id="time"> ${cityTime}
    </div></div></div> 
-    <a href="/">All cities</a>`;
+    <a href="/">Return to select new city</a>`;
   }
 
   let intervalidId = null;

@@ -43,30 +43,17 @@ function updateCity(event) {
   if (cityTz === "city") {
     cityTz = moment.tz.guess();
   }
-
-  function updateTime() {
-    let cityElement = document.querySelector("#cities");
-    let cityTime = moment().tz(cityTz).format("h:mm:ss [<small>]A[</small>]");
-    let cityDate = moment().tz(cityTz).format("MMMM Do, YYYY");
-    let cityName = cityTz.replace("_", " ").split("/")[1];
-    cityElement.innerHTML = `<div class="time-clock" >
-        <div class="city-info">
-    <div class="city"> ${cityName}<div class="date">${cityDate}</div></div>
-    <div class="time" id="time"> ${cityTime}
-   </div></div></div> 
-    <a href="/">Return to select new city</a>`;
-  }
-
-  let intervalidId = null;
-
-  function startInterval() {
-    if (intervalidId !== null) {
-      clearInterval(intervalidId);
-    }
-    intervalidId = setInterval(updateTime, 1000);
-  }
-  startInterval();
+  let cityElement = document.querySelector("#cities");
+  let cityTime = moment().tz(cityTz).format("h:mm:ss [<small>]A[</small>]");
+  let cityDate = moment().tz(cityTz).format("MMMM Do, YYYY");
+  let cityName = cityTz.replace("_", " ").split("/")[1];
+  cityElement.innerHTML = `<div class="time-clock" >
+      <div class="city-info">
+  <div class="city"> ${cityName}<div class="date">${cityDate}</div></div>
+  <div class="time" id="time"> ${cityTime}
+  </div></div></div> 
+  <a href="/">All cities</a>`;
 }
 
 let timeSelectElement = document.querySelector("#location");
-timeSelectElement.addEventListener("change", updateCity, { once: true });
+timeSelectElement.addEventListener("change", updateCity);
